@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        background: green;
+        height: 70px;
+        width: 100%;
+      }
+
+      .head{
+        float: left;
+        width: 45%;
+      }
+
+      .judul{
+    line-height: 15px;
+    margin: 15px;
+}
+
+.judul h4,h2{
+    margin: 15px 0px -2.5px 40px;
+}
+
+.logo{
+  padding-top: 5px;
+    height: 40px;
+    width: 45px;
+    position: absolute;
+}
+
+nav ul{
+    float: right;
+    margin: right 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 10px;
+
+}
+
+nav ul li a{
+    font-size: 17px;
+    padding: 10px 17px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+
+.hl{
+    color: antiquewhite;
+}
+
+#int{
+    display: none;
+}
+
+.btn{
+    display: none;
+}
+      /* .navbar {
+        background-color: #1aff00;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navbar img {
+        height: 40px;
+        margin-right: 15px;
+      }
+      .navbar a {
+        color: white;
+        margin-right: 20px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .navbar .menu {
+        display: flex;
+      } */
+      .content {
+        padding: 20px;
+      }
+      .hidden {
+        display: none;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 100px;
+        border-radius: 5px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+      .tree {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+      }
+      .node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 5px;
+        background: #4caf50;
+        color: white;
+        font-weight: bold;
+        position: relative;
+        min-width: 150px;
+      }
+      .name {
+        background: white;
+        color: black;
+        padding: 5px;
+        border-radius: 3px;
+        margin-top: 5px;
+        width: 100%;
+        text-align: center;
+      }
+      .tree-level {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        margin-top: 20px;
+        width: 100%;
+      }
+      .branch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 10px;
+      }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .navbar .menu {
+          flex-direction: column;
+          width: 100%;
+        }
+        .navbar a {
+          padding: 10px 0;
+        }
+        
+        .tree-level {
+          flex-direction: column;
+          align-items: center;
+        }
+        .branch {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <nav class="navbar">
+      <img src="TJKT.png" alt="Logo" />
+      <div class="menu">
+        <a href="#home" onclick="showPage('home')">Beranda</a>
+        <a href="#galeri" onclick="showPage('galeri')">Galeri</a>
+        <a href="#jadwal" onclick="showPage('jadwal')">Jadwal</a>
+        <a href="#absensi" onclick="showPage('absensi')">Absensi</a>
+      </div>
+    </nav> -->
+    <nav>
+      <div class="head">
+        <img src="TJKT.png" class="logo">
+        <div class="judul">
+          <h2>KELAS X TJKT-3</h2>
+          <h4>Teknik Jaringan Komputer Dan Telekomunikasi</h4>
+        </div>
+      </div>
+      <input type="checkbox" id="int">
+       <label for="int" class="btn">
+        <span class="material-symbols-outlined">menu</span>
+       </label>
+
+
+        <ul class="nav-menu">
+            <li><a href="#home" onclick="showPage('home')">Beranda</a></li>
+        <li><a href="#galeri" onclick="showPage('galeri')">Galeri</a></li>
+        <li><a href="#jadwal" onclick="showPage('jadwal')">Jadwal</a></li>
+        <li><a href="#absensi" onclick="showPage('absensi')">Absensi</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="content">
+      <h1>Beranda</h1>
+      <p>Selamat datang di publikasi kegiatan kelas!</p>
+      <p>
+        Kelas 10 TJKT SMK Negeri 1 Sragi adalah kelas yang fokus pada Teknologi
+        Jaringan Komputer dan Telekomunikasi. Kelas ini bertujuan untuk
+        membekali siswa dengan keterampilan dan pengetahuan di bidang jaringan
+        komputer, pemrograman, serta sistem telekomunikasi modern.
+      </p>
+      <h1>Struktur Organisasi Kelas</h1>
+      <div class="tree">
+        <div class="node">
+          Ketua Kelas
+          <div class="name">nama</div>
+        </div>
+        <div class="tree-level">
+          <div class="branch">
+            <div class="node">
+              Wakil Ketua Kelas
+              <div class="name">nama</div>
+            </div>
+            <div class="tree-level">
+              <div class="branch">
+                <div class="node">
+                  Sekretaris 1
+                  <div class="name">Nama Sekretaris 1</div>
+                </div>
+                <div class="node">
+                  Sekretaris 2
+                  <div class="name">Nama Sekretaris 2</div>
+                </div>
+              </div>
+              <div class="branch">
+                <div class="node">
+                  Bendahara 1
+                  <div class="name">Nama Bendahara 1</div>
+                </div>
+                <div class="node">
+                  Bendahara 2
+                  <div class="name">Nama Bendahara 2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tree-level">
+          <div class="branch">
+            <div class="node">
+              Sekbid Kebersihan 1
+              <div class="name">Nama</div>
+            </div>
+            <div class="node">
+              Sekbid Kebersihan 2
+              <div class="name">Nama</div>
+            </div>
+          </div>
+          <div class="branch">
+            <div class="node">
+              Sekbid Keamanan 1
+              <div class="name">Nama</div>
+            </div>
+            <div class="node">
+              Sekbid Keamanan 2
+              <div class="name">Nama</div>
+            </div>
+          </div>
+          <div class="branch">
+            <div class="node">
+              Sekbid Olahraga 1
+              <div class="name">Nama</div>
+            </div>
+            <div class="node">
+              Sekbid Olahraga 2
+              <div class="name">Nama</div>
+            </div>
+          </div>
+          <div class="branch">
+            <div class="node">
+              Sekbid Kerohanian 1
+              <div class="name">Nama</div>
+            </div>
+            <div class="node">
+              Sekbid Kerohanian 2
+              <div class="name">Nama</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="galeri" class="content hidden">
+      <h1>Galeri</h1>
+      <p>Kumpulan foto dan video kegiatan kelas.</p>
+      <div class="gallery">
+        <img src="gambar 1.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/1.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/4.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/4.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/5.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/6.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/7.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/8.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/9.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/9.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/9.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/9.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/9.jpg" alt="Foto 1" />
+        <img src="smk 1 sragi 10 tjkt 3/9.jpg" alt="Foto 1" />
+              </div>
+    </div>
+
+    <div id="jadwal" class="content hidden">
+      <h1>Jadwal Pelajaran</h1>
+      <table>
+        <tr>
+          <th>Hari</th>
+          <th>Pelajaran Produktif</th>
+          <th>Pelajaran Normatif</th>
+        </tr>
+        <tr>
+          <td>Senin</td>
+          <td>UPGW | DPK | INFORMATIKA</td>
+          <td>UPGW | SI | SB | B.INGGRIS</td>
+        </tr>
+        <tr>
+          <td>Selasa</td>
+          <td>INFORMATIKA | DPK | IPAS</td>
+          <td>PJKR | B.INDONESIA | PAIBP</td>
+        </tr>
+        <tr>
+          <td>Rabu</td>
+          <td>IPAS | BP/BK | DPK</td>
+          <td>B.INDONESIA | B.INGGRIS | B.JAWA | NGARENG</td>
+        </tr>
+        <tr>
+          <td>Kamis</td>
+          <td>DPK | IPAS | BP/BK</td>
+          <td>PP | B.JAWA | B.IDONESIA | MATEMATIKA</td>
+        </tr>
+        <tr>
+          <td>Jumat</td>
+          <td>PJKR | DPK | NGARENG</td>
+          <td>MATEMATIKA</td>
+        </tr>
+      </table>
+      <h1>↡file pdf jadwal download↡</h1>
+      <a href="" download="kelas blok 1 v2.pdf">Normatif</a>
+      <a href="" download="kelas blok 2 v3.pdf">Produktif</a>
+    </div>
+
+    <div id="absensi" class="content hidden">
+      <h1>Absensi</h1>
+      <input type="text" id="nama" placeholder="Masukkan Nama" />
+      <button onclick="submitAbsensi()">Absen</button>
+      <button onclick="exportToCSV()">Ekspor ke Spreadsheet</button>
+      <table id="absensiTable">
+        <tr>
+          <th>Nama</th>
+          <th>Waktu</th>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function showPage(pageId) {
+        document.querySelectorAll(".content").forEach((page) => {
+          page.classList.add("hidden");
+        });
+        document.getElementById(pageId).classList.remove("hidden");
+      }
+
+      function submitAbsensi() {
+        let nama = document.getElementById("nama").value;
+        if (nama) {
+          let table = document.getElementById("absensiTable");
+          let row = table.insertRow(-1);
+          let cell1 = row.insertCell(0);
+          let cell2 = row.insertCell(1);
+          let now = new Date().toLocaleString();
+          cell1.innerHTML = nama;
+          cell2.innerHTML = now;
+          document.getElementById("nama").value = "";
+        }
+      }
+
+      function exportToCSV() {
+        let table = document.getElementById("absensiTable");
+        let rows = table.getElementsByTagName("tr");
+        let csvContent = "data:text/csv;charset=utf-8, Nama, Waktu\n";
+        for (let i = 1; i < rows.length; i++) {
+          let cols = rows[i].getElementsByTagName("td");
+          let rowData = [];
+          for (let j = 0; j < cols.length; j++) {
+            rowData.push(cols[j].innerText);
+          }
+          csvContent += rowData.join(",") + "\n";
+        }
+        let encodedUri = encodeURI(csvContent);
+        let link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "absensi.csv");
+        document.body.appendChild(link);
+        link.click();
+      }
+    </script>
+  </body>
+</html>
